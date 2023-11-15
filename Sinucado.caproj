@@ -84,6 +84,7 @@
             </behaviors>
             <texture />
         </object-type>
+        <object-folder name="Bolas">
         <object-type name="Bola1" sid="383065040127205">
             <plugin id="Sprite" />
             <animation-folder>
@@ -103,6 +104,7 @@
                 </animation>
             </animation-folder>
         </object-type>
+        </object-folder>
         <object-type name="Buraco" sid="663736961298374">
             <plugin id="Sprite" />
             <behaviors>
