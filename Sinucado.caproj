@@ -339,7 +339,7 @@
         <object-type name="Mouse" sid="807482605385523">
             <plugin id="Mouse" />
         </object-type>
-        <object-type name="Text" sid="177386053852401">
+        <object-type name="Pontos" sid="177386053852401">
             <plugin id="Text" />
         </object-type>
         <object-type name="PontoInicial" sid="650545237420936">
@@ -350,8 +350,20 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="PontosPlayer" sid="470917922463717">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="PontosNPC" sid="953916201627355">
+            <plugin id="Text" />
+        </object-type>
     </object-folder>
-    <families />
+    <families>
+        <family name="FamiliaBolas" plugin-id="Sprite" sid="414726085304342">
+            <members>
+                <member>Bolas</member>
+            </members>
+        </family>
+    </families>
     <layout-folder>
         <layout>Layout 1.xml</layout>
     </layout-folder>
