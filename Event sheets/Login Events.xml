@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Login Events</name>
+    <events>
+        <variable constant="0" name="MyUsername" sid="564241262824452" static="0" type="text"></variable>
+        <event-block sid="917126453602267">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="731891909635064" type="System" />
+            </conditions>
+            <actions>
+                <action id="6" name="Set focused" sid="871294651158637" type="NameTextBox" />
+            </actions>
+            <sub-events>
+                <event-block sid="955109929903008">
+                    <conditions>
+                        <condition id="12" inverted="1" name="Supports multiplayer" sid="368210311913915" type="Multiplayer" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="246343074930178" type="Title">
+                            <param id="0" name="Text">&quot;Multiplayer not supported&quot;</param>
+                        </action>
+                        <action id="4" name="Set font color" sid="546526419920792" type="Title">
+                            <param id="0" name="Color">rgb(255, 0, 0)</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="332203991716606">
+            <conditions>
+                <condition id="1" name="On text changed" sid="249086164231903" type="NameTextBox" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="696741739592119">
+                    <conditions>
+                        <condition id="0" name="Compare text" sid="511735346093354" type="NameTextBox">
+                            <param id="0" name="Text">&quot;&quot;</param>
+                            <param id="1" name="Case">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="3" name="Set enabled" sid="927250104163582" type="JoinButton">
+                            <param id="0" name="Mode">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="214273768598160">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="146080722668819" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="3" name="Set enabled" sid="218680728560332" type="JoinButton">
+                            <param id="0" name="Mode">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block any="1" sid="515665512582243">
+            <conditions>
+                <condition id="0" name="On clicked" sid="386187524841246" type="JoinButton" />
+                <condition id="0" name="On key pressed" sid="190996399093764" type="Keyboard">
+                    <param id="0" name="Key">13</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="208912213438228">
+                    <conditions>
+                        <condition id="0" inverted="1" name="Compare text" sid="191047635104367" type="NameTextBox">
+                            <param id="0" name="Text">&quot;&quot;</param>
+                            <param id="1" name="Case">0</param>
+                        </condition>
+                        <condition id="12" name="Supports multiplayer" sid="319929668987385" type="Multiplayer" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="717222881584885" type="System">
+                            <param id="0" name="Variable">MyUsername</param>
+                            <param id="1" name="Value">NameTextBox.Text</param>
+                        </action>
+                        <action id="-2" name="Go to layout" sid="377512290757725" type="System">
+                            <param id="0" name="Layout">Game</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>
