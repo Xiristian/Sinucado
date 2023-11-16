@@ -17,6 +17,7 @@
     </used-plugins>
     <used-behaviors>
         <behavior author="Scirra" id="Anchor" version="1">Anchor</behavior>
+        <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
         <behavior author="Scirra" id="Physics" version="1">Physics</behavior>
         <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
@@ -379,6 +380,30 @@
         <object-type name="Pontos2" sid="110785826787864">
             <plugin id="Text" />
         </object-type>
+        <object-type name="Mira" sid="443933887137399">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Bullet" sid="847569601824904">
+                    <behavior id="Bullet" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="368547401483423" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.22" y="0.22" />
+                            <point x="0.5" y="0.1" />
+                            <point x="0.77" y="0.23" />
+                            <point x="0.87" y="0.5" />
+                            <point x="0.75" y="0.75" />
+                            <point x="0.5" y="0.86" />
+                            <point x="0.24" y="0.76" />
+                            <point x="0.11" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families>
         <family name="FamiliaBolas" plugin-id="Sprite" sid="414726085304342">
@@ -394,14 +419,17 @@
                 <behavior-type name="Physics" sid="563493127485020">
                     <behavior id="Physics" />
                 </behavior-type>
+                <behavior-type name="Solid" sid="904632573100415">
+                    <behavior id="solid" />
+                </behavior-type>
             </behaviors>
         </family>
     </families>
     <layout-folder>
-        <layout>Layout 1.xml</layout>
+        <layout>Game.xml</layout>
     </layout-folder>
     <event-folder>
-        <event-sheet>Event sheet 1.xml</event-sheet>
+        <event-sheet>Game Event.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Mouse" uid="18" />
