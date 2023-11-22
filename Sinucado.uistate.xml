@@ -24,7 +24,7 @@ you probably do not want to add any .uistate.xml files to the repository.-->
     </families-expanded>
     <folders-expanded>
         <folder expanded="1" path="object-folder/" />
-        <folder expanded="1" path="object-folder/Bolas/" />
+        <folder expanded="0" path="object-folder/Bolas/" />
         <folder expanded="1" path="layout-folder/" />
         <folder expanded="1" path="event-folder/" />
         <folder expanded="1" path="file-folder/" />
@@ -37,10 +37,20 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="animation-folder/Bola4/" />
         <folder expanded="1" path="animation-folder/Bola5/" />
         <folder expanded="1" path="animation-folder/Bola6/" />
+        <folder expanded="1" path="animation-folder/Bola7/" />
+        <folder expanded="1" path="animation-folder/Bola8/" />
+        <folder expanded="1" path="animation-folder/Bola9/" />
+        <folder expanded="1" path="animation-folder/Bola10/" />
+        <folder expanded="1" path="animation-folder/Bola11/" />
+        <folder expanded="1" path="animation-folder/Bola12/" />
+        <folder expanded="1" path="animation-folder/Bola13/" />
+        <folder expanded="1" path="animation-folder/Bola14/" />
+        <folder expanded="1" path="animation-folder/Bola15/" />
         <folder expanded="1" path="animation-folder/BolaBranca/" />
         <folder expanded="1" path="animation-folder/Buraco/" />
         <folder expanded="1" path="animation-folder/Taco/" />
         <folder expanded="1" path="animation-folder/PontoInicial/" />
         <folder expanded="1" path="animation-folder/Mira/" />
+        <folder expanded="1" path="animation-folder/Paredes/" />
     </folders-expanded>
 </c2uistate>
