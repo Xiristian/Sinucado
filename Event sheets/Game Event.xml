@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Game Event</name>
     <events>
+        <variable constant="0" name="LISTRADA" sid="632545860881411" static="0" type="number">0</variable>
         <variable constant="0" name="BOLABRANCACAIU" sid="738126004369813" static="0" type="number">0</variable>
         <variable constant="0" name="TODASASBOLASPARADAS" sid="710649440294735" static="0" type="number">1</variable>
         <variable constant="0" name="PONTOSNPC" sid="490718365518576" static="0" type="number">0</variable>
@@ -66,37 +67,265 @@
                             </conditions>
                             <actions>
                                 <action id="-9" name="Destroy" sid="210643147786885" type="FamiliaBolas" />
-                                <action id="-9" name="Set value" sid="665140656016515" type="System">
-                                    <param id="0" name="Variable">PONTOS</param>
-                                    <param id="1" name="Value">PONTOS+1</param>
-                                </action>
                             </actions>
                             <sub-events>
-                                <event-block sid="518188449781475">
+                                <event-block sid="736871676951674">
                                     <conditions>
-                                        <condition id="-14" name="Compare variable" sid="434381370061830" type="System">
-                                            <param id="0" name="Variable">PLAYER</param>
+                                        <condition id="-7" name="Compare instance variable" sid="270425042914115" type="FamiliaBolas">
+                                            <param id="0" name="Instance variable">NUMERO</param>
                                             <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Value">1</param>
+                                            <param id="2" name="Value">8</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="143401776582385">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="399607253631391" type="System">
+                                                    <param id="0" name="First value">PONTOSPLAYER</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">7</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-16" name="Wait" sid="755689210511656" type="System">
+                                                    <param id="0" name="Seconds">2</param>
+                                                </action>
+                                                <action id="-26" name="Restart layout" sid="823593500126867" type="System" />
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="648127336490673">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="401026087035064" type="System" />
+                                                <condition id="-14" name="Compare variable" sid="536004128514439" type="System">
+                                                    <param id="0" name="Variable">PONTOSNPC</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">7</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-16" name="Wait" sid="440785910534959" type="System">
+                                                    <param id="0" name="Seconds">2</param>
+                                                </action>
+                                                <action id="-26" name="Restart layout" sid="627409000741968" type="System" />
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="854277761923536">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="698289433100619" type="System" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="-16" name="Wait" sid="146975664685925" type="System">
+                                                    <param id="0" name="Seconds">2</param>
+                                                </action>
+                                                <action id="-26" name="Restart layout" sid="866294405642060" type="System" />
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="443972564286860">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="788571976034706" type="System">
+                                            <param id="0" name="First value">PONTOSPLAYER + PONTOSNPC</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">0</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="761465668876014" type="FamiliaBolas">
+                                            <param id="0" name="Instance variable">NUMERO</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Value">8</param>
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="-9" name="Set value" sid="169581499040417" type="System">
-                                            <param id="0" name="Variable">PONTOSPLAYER</param>
-                                            <param id="1" name="Value">PONTOSPLAYER+1</param>
+                                        <action id="-9" name="Set value" sid="680221541339946" type="System">
+                                            <param id="0" name="Variable">LISTRADA</param>
+                                            <param id="1" name="Value">PLAYER</param>
                                         </action>
                                     </actions>
                                 </event-block>
-                                <event-block sid="404485110617055">
+                                <event-block sid="550011931047977">
                                     <conditions>
-                                        <condition id="-22" name="Else" sid="593832645775706" type="System" />
+                                        <condition id="-7" name="Compare instance variable" sid="383380876619508" type="FamiliaBolas">
+                                            <param id="0" name="Instance variable">NUMERO</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Value">8</param>
+                                        </condition>
                                     </conditions>
-                                    <actions>
-                                        <action id="-9" name="Set value" sid="530336945786747" type="System">
-                                            <param id="0" name="Variable">PONTOSNPC</param>
-                                            <param id="1" name="Value">PONTOSNPC+1</param>
-                                        </action>
-                                    </actions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="518188449781475">
+                                            <conditions>
+                                                <condition id="-14" name="Compare variable" sid="434381370061830" type="System">
+                                                    <param id="0" name="Variable">PLAYER</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">LISTRADA</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="509804980941266" type="System">
+                                                    <param id="0" name="Variable">PONTOS</param>
+                                                    <param id="1" name="Value">PONTOS+1</param>
+                                                </action>
+                                            </actions>
+                                            <sub-events>
+                                                <event-block sid="557462817942810">
+                                                    <conditions>
+                                                        <condition id="-14" name="Compare variable" sid="228307781458251" type="System">
+                                                            <param id="0" name="Variable">PLAYER</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">1</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-9" name="Set value" sid="910671271463453" type="System">
+                                                            <param id="0" name="Variable">PONTOSPLAYER</param>
+                                                            <param id="1" name="Value">PONTOSPLAYER+1</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="320119674001787">
+                                                    <conditions>
+                                                        <condition id="-22" name="Else" sid="547726045296963" type="System" />
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-9" name="Set value" sid="313202004740353" type="System">
+                                                            <param id="0" name="Variable">PONTOSNPC</param>
+                                                            <param id="1" name="Value">PONTOSNPC+1</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                        <event-block sid="320151062856398">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="157442584047108" type="System" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="120990757218992" type="System">
+                                                    <param id="0" name="Variable">PONTOS</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
+                                            </actions>
+                                            <sub-events>
+                                                <event-block sid="332350354874710">
+                                                    <conditions>
+                                                        <condition id="-14" name="Compare variable" sid="781697840749335" type="System">
+                                                            <param id="0" name="Variable">PLAYER</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">1</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-9" name="Set value" sid="173359507195633" type="System">
+                                                            <param id="0" name="Variable">PONTOSNPC</param>
+                                                            <param id="1" name="Value">PONTOSNPC+1</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="354701225491105">
+                                                    <conditions>
+                                                        <condition id="-22" name="Else" sid="548872205081040" type="System" />
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-9" name="Set value" sid="899707683043228" type="System">
+                                                            <param id="0" name="Variable">PONTOSPLAYER</param>
+                                                            <param id="1" name="Value">PONTOSPLAYER+1</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="732412569928397">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="570679714732641" type="System" />
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="617746936622135">
+                                            <conditions>
+                                                <condition id="-14" name="Compare variable" sid="212647358466166" type="System">
+                                                    <param id="0" name="Variable">PLAYER</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">LISTRADA</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="456134444823207" type="System">
+                                                    <param id="0" name="Variable">PONTOS</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
+                                            </actions>
+                                            <sub-events>
+                                                <event-block sid="460195564130542">
+                                                    <conditions>
+                                                        <condition id="-14" name="Compare variable" sid="747483648727064" type="System">
+                                                            <param id="0" name="Variable">PLAYER</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">1</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-9" name="Set value" sid="411382423852539" type="System">
+                                                            <param id="0" name="Variable">PONTOSNPC</param>
+                                                            <param id="1" name="Value">PONTOSNPC+1</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="883778388157080">
+                                                    <conditions>
+                                                        <condition id="-22" name="Else" sid="878907448373081" type="System" />
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-9" name="Set value" sid="444682588385119" type="System">
+                                                            <param id="0" name="Variable">PONTOSPLAYER</param>
+                                                            <param id="1" name="Value">PONTOSPLAYER+1</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                        <event-block sid="908871842837110">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="456342455463555" type="System" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="288901543808733" type="System">
+                                                    <param id="0" name="Variable">PONTOS</param>
+                                                    <param id="1" name="Value">PONTOS+1</param>
+                                                </action>
+                                            </actions>
+                                            <sub-events>
+                                                <event-block sid="802309549937588">
+                                                    <conditions>
+                                                        <condition id="-14" name="Compare variable" sid="851155452846670" type="System">
+                                                            <param id="0" name="Variable">PLAYER</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">1</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-9" name="Set value" sid="724364791397910" type="System">
+                                                            <param id="0" name="Variable">PONTOSPLAYER</param>
+                                                            <param id="1" name="Value">PONTOSPLAYER+1</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="533257356668670">
+                                                    <conditions>
+                                                        <condition id="-22" name="Else" sid="439673442682540" type="System" />
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-9" name="Set value" sid="629639241532281" type="System">
+                                                            <param id="0" name="Variable">PONTOSNPC</param>
+                                                            <param id="1" name="Value">PONTOSNPC+1</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
                                 </event-block>
                             </sub-events>
                         </event-block>

@@ -10,6 +10,7 @@
     <unique-id>wgymb2u5q991</unique-id>
     <saved-with-version>28000</saved-with-version>
     <used-plugins>
+        <plugin author="Scirra" id="Function" version="1">Function</plugin>
         <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
@@ -709,6 +710,9 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="Function" sid="869472596779256">
+            <plugin id="Function" />
+        </object-type>
     </object-folder>
     <families>
         <family name="FamiliaBolas" plugin-id="Sprite" sid="414726085304342">
@@ -729,6 +733,9 @@
                 <member>Bola8</member>
                 <member>Bola9</member>
             </members>
+            <instance-variables>
+                <instance-variable name="NUMERO" sid="209088229064519" type="number" />
+            </instance-variables>
             <behaviors>
                 <behavior-type name="Physics" sid="563493127485020">
                     <behavior id="Physics" />
@@ -747,6 +754,7 @@
     </event-folder>
     <global-instances>
         <global-instance type="Mouse" uid="18" />
+        <global-instance type="Function" uid="35" />
     </global-instances>
     <sounds-folder />
     <music-folder />
