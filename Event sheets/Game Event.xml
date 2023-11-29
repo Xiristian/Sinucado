@@ -61,7 +61,7 @@
                         <event-block sid="653842081132559">
                             <conditions>
                                 <condition id="1" name="Is overlapping another object" sid="824394349759729" type="FamiliaBolas">
-                                    <param id="0" name="Object">Buraco</param>
+                                    <param id="0" name="Object">FamiliaCaçapas</param>
                                 </condition>
                             </conditions>
                             <actions>
@@ -127,7 +127,7 @@
                 <event-block sid="947088373574666">
                     <conditions>
                         <condition id="1" name="Is overlapping another object" sid="585961251722745" type="BolaBranca">
-                            <param id="0" name="Object">Buraco</param>
+                            <param id="0" name="Object">FamiliaCaçapas</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -165,6 +165,9 @@
                             <actions>
                                 <action id="-15" name="Set visible" sid="238275341467719" type="Taco">
                                     <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action id="9" name="Set scale" sid="439888709039679" type="FamiliaCaçapas">
+                                    <param id="0" name="Scale">0</param>
                                 </action>
                             </actions>
                             <sub-events>
@@ -302,6 +305,10 @@
                         <action id="5" name="Set frame" sid="374648093297002" type="Taco">
                             <param id="0" name="Frame number">0</param>
                         </action>
+                        <action id="-9" name="Set value" sid="328733330499465" type="System">
+                            <param id="0" name="Variable">FORCA</param>
+                            <param id="1" name="Value">1000</param>
+                        </action>
                     </actions>
                 </event-block>
                 <event-block sid="365560416602948">
@@ -411,6 +418,37 @@
                             </actions>
                         </event-block>
                     </sub-events>
+                </event-block>
+                <event-block sid="426196747731155">
+                    <conditions>
+                        <condition id="0" name="On clicked" sid="204513358664995" type="Força" />
+                        <condition id="-14" name="Compare variable" sid="865518786902400" type="System">
+                            <param id="0" name="Variable">PLAYER</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="855444918926400" type="System">
+                            <param id="0" name="Variable">FORCA</param>
+                            <param id="1" name="Value">200000</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="189713143562810">
+                    <conditions>
+                        <condition id="0" name="On clicked" sid="770870652983856" type="Caçapa" />
+                        <condition id="-14" name="Compare variable" sid="428921736817318" type="System">
+                            <param id="0" name="Variable">PLAYER</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="9" name="Set scale" sid="469141531030608" type="FamiliaCaçapas">
+                            <param id="0" name="Scale">1.2</param>
+                        </action>
+                    </actions>
                 </event-block>
             </sub-events>
         </event-group>
