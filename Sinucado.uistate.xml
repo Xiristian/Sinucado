@@ -10,8 +10,8 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <display name="HTML5" />
     </configurations>
     <open-tabs>
-        <layout active="1" order="0">Game</layout>
-        <event-sheet order="1">Game Event</event-sheet>
+        <layout order="0">Game</layout>
+        <event-sheet active="1" order="1">Game Event</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />
@@ -20,10 +20,12 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <property expanded="1" name="Configuration Settings" />
     </properties>
     <families-expanded root="1">
-        <family expanded="1" name="FamiliaBolas" />
+        <family expanded="0" name="FamiliaBolas" />
+        <family expanded="1" name="FamiliaCaçapas" />
     </families-expanded>
     <folders-expanded>
         <folder expanded="1" path="object-folder/" />
+        <folder expanded="1" path="object-folder/Caçapas/" />
         <folder expanded="0" path="object-folder/Bolas/" />
         <folder expanded="1" path="layout-folder/" />
         <folder expanded="1" path="event-folder/" />
@@ -31,6 +33,12 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="sound-folder/" />
         <folder expanded="1" path="music-folder/" />
         <folder expanded="0" path="file-folder/Icons/" />
+        <folder expanded="1" path="animation-folder/Buraco/" />
+        <folder expanded="1" path="animation-folder/Buraco2/" />
+        <folder expanded="1" path="animation-folder/Buraco3/" />
+        <folder expanded="1" path="animation-folder/Buraco4/" />
+        <folder expanded="1" path="animation-folder/Buraco5/" />
+        <folder expanded="1" path="animation-folder/Buraco6/" />
         <folder expanded="1" path="animation-folder/Bola1/" />
         <folder expanded="1" path="animation-folder/Bola2/" />
         <folder expanded="1" path="animation-folder/Bola3/" />
@@ -47,7 +55,6 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="animation-folder/Bola14/" />
         <folder expanded="1" path="animation-folder/Bola15/" />
         <folder expanded="1" path="animation-folder/BolaBranca/" />
-        <folder expanded="1" path="animation-folder/Buraco/" />
         <folder expanded="1" path="animation-folder/Taco/" />
         <folder expanded="1" path="animation-folder/PontoInicial/" />
         <folder expanded="1" path="animation-folder/Mira/" />
