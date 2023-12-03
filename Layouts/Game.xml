@@ -196,11 +196,11 @@
                                 <immovable>Yes</immovable>
                                 <collision-mask>Use collision polygon</collision-mask>
                                 <prevent-rotation>No</prevent-rotation>
-                                <density>1</density>
-                                <friction>0.5</friction>
-                                <elasticity>0.2</elasticity>
+                                <density>0</density>
+                                <friction>0</friction>
+                                <elasticity>0</elasticity>
                                 <linear-damping>0</linear-damping>
-                                <angular-damping>0.01</angular-damping>
+                                <angular-damping>0</angular-damping>
                                 <bullet>No</bullet>
                                 <initial-state>Enabled</initial-state>
                             </properties>
@@ -605,12 +605,12 @@
                                 <immovable>No</immovable>
                                 <collision-mask>Circle</collision-mask>
                                 <prevent-rotation>No</prevent-rotation>
-                                <density>1</density>
+                                <density>3</density>
                                 <friction>0</friction>
-                                <elasticity>0.4</elasticity>
+                                <elasticity>0.5</elasticity>
                                 <linear-damping>1</linear-damping>
-                                <angular-damping>1</angular-damping>
-                                <bullet>Yes</bullet>
+                                <angular-damping>0</angular-damping>
+                                <bullet>No</bullet>
                                 <initial-state>Enabled</initial-state>
                             </properties>
                         </behavior-instance>
@@ -655,8 +655,8 @@
                         <x>1117</x>
                         <y>-147</y>
                         <z>0</z>
-                        <width>5</width>
-                        <height>5</height>
+                        <width>50</width>
+                        <height>50</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
@@ -811,10 +811,10 @@
                             <properties>
                                 <immovable>No</immovable>
                                 <collision-mask>Circle</collision-mask>
-                                <prevent-rotation>No</prevent-rotation>
+                                <prevent-rotation>Yes</prevent-rotation>
                                 <density>4</density>
                                 <friction>0</friction>
-                                <elasticity>0.3</elasticity>
+                                <elasticity>0.5</elasticity>
                                 <linear-damping>1</linear-damping>
                                 <angular-damping>1</angular-damping>
                                 <bullet>Yes</bullet>
@@ -857,10 +857,10 @@
                             <properties>
                                 <immovable>No</immovable>
                                 <collision-mask>Circle</collision-mask>
-                                <prevent-rotation>No</prevent-rotation>
+                                <prevent-rotation>Yes</prevent-rotation>
                                 <density>4</density>
                                 <friction>0</friction>
-                                <elasticity>0.3</elasticity>
+                                <elasticity>0.5</elasticity>
                                 <linear-damping>1</linear-damping>
                                 <angular-damping>1</angular-damping>
                                 <bullet>Yes</bullet>
@@ -903,10 +903,10 @@
                             <properties>
                                 <immovable>No</immovable>
                                 <collision-mask>Circle</collision-mask>
-                                <prevent-rotation>No</prevent-rotation>
+                                <prevent-rotation>Yes</prevent-rotation>
                                 <density>4</density>
                                 <friction>0</friction>
-                                <elasticity>0.3</elasticity>
+                                <elasticity>0.5</elasticity>
                                 <linear-damping>1</linear-damping>
                                 <angular-damping>1</angular-damping>
                                 <bullet>Yes</bullet>
@@ -949,10 +949,10 @@
                             <properties>
                                 <immovable>No</immovable>
                                 <collision-mask>Circle</collision-mask>
-                                <prevent-rotation>No</prevent-rotation>
+                                <prevent-rotation>Yes</prevent-rotation>
                                 <density>4</density>
                                 <friction>0</friction>
-                                <elasticity>0.3</elasticity>
+                                <elasticity>0.5</elasticity>
                                 <linear-damping>1</linear-damping>
                                 <angular-damping>1</angular-damping>
                                 <bullet>Yes</bullet>
@@ -995,10 +995,10 @@
                             <properties>
                                 <immovable>No</immovable>
                                 <collision-mask>Circle</collision-mask>
-                                <prevent-rotation>No</prevent-rotation>
+                                <prevent-rotation>Yes</prevent-rotation>
                                 <density>4</density>
                                 <friction>0</friction>
-                                <elasticity>0.3</elasticity>
+                                <elasticity>0.5</elasticity>
                                 <linear-damping>1</linear-damping>
                                 <angular-damping>1</angular-damping>
                                 <bullet>Yes</bullet>
@@ -1041,10 +1041,10 @@
                             <properties>
                                 <immovable>No</immovable>
                                 <collision-mask>Circle</collision-mask>
-                                <prevent-rotation>No</prevent-rotation>
+                                <prevent-rotation>Yes</prevent-rotation>
                                 <density>4</density>
                                 <friction>0</friction>
-                                <elasticity>0.3</elasticity>
+                                <elasticity>0.5</elasticity>
                                 <linear-damping>1</linear-damping>
                                 <angular-damping>1</angular-damping>
                                 <bullet>Yes</bullet>
@@ -1087,10 +1087,10 @@
                             <properties>
                                 <immovable>No</immovable>
                                 <collision-mask>Circle</collision-mask>
-                                <prevent-rotation>No</prevent-rotation>
+                                <prevent-rotation>Yes</prevent-rotation>
                                 <density>4</density>
                                 <friction>0</friction>
-                                <elasticity>0.3</elasticity>
+                                <elasticity>0.5</elasticity>
                                 <linear-damping>1</linear-damping>
                                 <angular-damping>1</angular-damping>
                                 <bullet>Yes</bullet>
@@ -1133,10 +1133,10 @@
                             <properties>
                                 <immovable>No</immovable>
                                 <collision-mask>Circle</collision-mask>
-                                <prevent-rotation>No</prevent-rotation>
+                                <prevent-rotation>Yes</prevent-rotation>
                                 <density>4</density>
                                 <friction>0</friction>
-                                <elasticity>0.3</elasticity>
+                                <elasticity>0.5</elasticity>
                                 <linear-damping>1</linear-damping>
                                 <angular-damping>1</angular-damping>
                                 <bullet>Yes</bullet>
@@ -1179,10 +1179,10 @@
                             <properties>
                                 <immovable>No</immovable>
                                 <collision-mask>Circle</collision-mask>
-                                <prevent-rotation>No</prevent-rotation>
+                                <prevent-rotation>Yes</prevent-rotation>
                                 <density>4</density>
                                 <friction>0</friction>
-                                <elasticity>0.3</elasticity>
+                                <elasticity>0.5</elasticity>
                                 <linear-damping>1</linear-damping>
                                 <angular-damping>1</angular-damping>
                                 <bullet>Yes</bullet>
@@ -1225,10 +1225,10 @@
                             <properties>
                                 <immovable>No</immovable>
                                 <collision-mask>Circle</collision-mask>
-                                <prevent-rotation>No</prevent-rotation>
+                                <prevent-rotation>Yes</prevent-rotation>
                                 <density>4</density>
                                 <friction>0</friction>
-                                <elasticity>0.3</elasticity>
+                                <elasticity>0.5</elasticity>
                                 <linear-damping>1</linear-damping>
                                 <angular-damping>1</angular-damping>
                                 <bullet>Yes</bullet>
@@ -1271,10 +1271,10 @@
                             <properties>
                                 <immovable>No</immovable>
                                 <collision-mask>Circle</collision-mask>
-                                <prevent-rotation>No</prevent-rotation>
+                                <prevent-rotation>Yes</prevent-rotation>
                                 <density>4</density>
                                 <friction>0</friction>
-                                <elasticity>0.3</elasticity>
+                                <elasticity>0.5</elasticity>
                                 <linear-damping>1</linear-damping>
                                 <angular-damping>1</angular-damping>
                                 <bullet>Yes</bullet>
@@ -1317,10 +1317,10 @@
                             <properties>
                                 <immovable>No</immovable>
                                 <collision-mask>Circle</collision-mask>
-                                <prevent-rotation>No</prevent-rotation>
+                                <prevent-rotation>Yes</prevent-rotation>
                                 <density>4</density>
                                 <friction>0</friction>
-                                <elasticity>0.3</elasticity>
+                                <elasticity>0.5</elasticity>
                                 <linear-damping>1</linear-damping>
                                 <angular-damping>1</angular-damping>
                                 <bullet>Yes</bullet>
@@ -1363,10 +1363,10 @@
                             <properties>
                                 <immovable>No</immovable>
                                 <collision-mask>Circle</collision-mask>
-                                <prevent-rotation>No</prevent-rotation>
+                                <prevent-rotation>Yes</prevent-rotation>
                                 <density>4</density>
                                 <friction>0</friction>
-                                <elasticity>0.3</elasticity>
+                                <elasticity>0.5</elasticity>
                                 <linear-damping>1</linear-damping>
                                 <angular-damping>1</angular-damping>
                                 <bullet>Yes</bullet>
@@ -1409,10 +1409,10 @@
                             <properties>
                                 <immovable>No</immovable>
                                 <collision-mask>Circle</collision-mask>
-                                <prevent-rotation>No</prevent-rotation>
+                                <prevent-rotation>Yes</prevent-rotation>
                                 <density>4</density>
                                 <friction>0</friction>
-                                <elasticity>0.3</elasticity>
+                                <elasticity>0.5</elasticity>
                                 <linear-damping>1</linear-damping>
                                 <angular-damping>1</angular-damping>
                                 <bullet>Yes</bullet>
@@ -1455,10 +1455,10 @@
                             <properties>
                                 <immovable>No</immovable>
                                 <collision-mask>Circle</collision-mask>
-                                <prevent-rotation>No</prevent-rotation>
+                                <prevent-rotation>Yes</prevent-rotation>
                                 <density>4</density>
                                 <friction>0</friction>
-                                <elasticity>0.3</elasticity>
+                                <elasticity>0.5</elasticity>
                                 <linear-damping>1</linear-damping>
                                 <angular-damping>1</angular-damping>
                                 <bullet>Yes</bullet>
@@ -1608,11 +1608,11 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>259.949829102</x>
-                        <y>127.099754333</y>
+                        <x>261.703552246</x>
+                        <y>129.145355225</y>
                         <z>0</z>
-                        <width>121.899688721</width>
-                        <height>122.199508667</height>
+                        <width>125.407073975</width>
+                        <height>126.290710449</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
@@ -1689,6 +1689,77 @@
                         <z>0</z>
                         <width>57</width>
                         <height>68</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="Ganhou" uid="54">
+                    <properties>
+                        <initial-visibility>Invisible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>873</x>
+                        <y>539</y>
+                        <z>0</z>
+                        <width>588</width>
+                        <height>90</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="Perdeu" uid="55">
+                    <properties>
+                        <initial-visibility>Invisible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>882</x>
+                        <y>522</y>
+                        <z>0</z>
+                        <width>588</width>
+                        <height>90</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="GameOver" uid="56">
+                    <properties>
+                        <text>Você ganhou</text>
+                        <initial-visibility>Invisible</initial-visibility>
+                        <font>Comic Sans MS,-48,400,0</font>
+                        <color>255,255,255</color>
+                        <horizontal-alignment>Left</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>663</x>
+                        <y>500</y>
+                        <z>0</z>
+                        <width>387.447998047</width>
+                        <height>81.668449402</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>

@@ -10,7 +10,7 @@
         <variable comment="Bolas feitas pelo PLAYER no total" constant="0" name="PONTOSPLAYER" sid="763762097885842" static="0" type="number">0</variable>
         <variable comment="1 = PLAYER, -1 = NPC" constant="0" name="PLAYER" sid="846687661259617" static="0" type="number">0</variable>
         <variable comment="Bolas feitas na jogadas atual" constant="0" name="PONTOS" sid="436993471190008" static="0" type="number">0</variable>
-        <variable constant="0" name="FORCA" sid="281845463635146" static="0" type="number">1000</variable>
+        <variable constant="0" name="FORCA" sid="281845463635146" static="0" type="number">1</variable>
         <event-group description="" sid="414789959729947" title="Game">
             <sub-events>
                 <event-block sid="550068414800282">
@@ -92,7 +92,7 @@
                             <param id="0" name="Text">PONTOSPLAYER</param>
                         </action>
                         <action id="0" name="Set text" sid="862118655755072" type="BolasParadas">
-                            <param id="0" name="Text">TODASASBOLASPARADAS</param>
+                            <param id="0" name="Text">FORCA</param>
                         </action>
                     </actions>
                 </event-block>
@@ -140,6 +140,15 @@
                                                 </condition>
                                             </conditions>
                                             <actions>
+                                                <action id="0" name="Set text" sid="967229525972444" type="GameOver">
+                                                    <param id="0" name="Text">&quot;Você ganhou&quot;</param>
+                                                </action>
+                                                <action id="-15" name="Set visible" sid="869292938913036" type="Ganhou">
+                                                    <param id="0" name="Visibility">1</param>
+                                                </action>
+                                                <action id="-15" name="Set visible" sid="660344064109927" type="GameOver">
+                                                    <param id="0" name="Visibility">1</param>
+                                                </action>
                                                 <action id="-16" name="Wait" sid="755689210511656" type="System">
                                                     <param id="0" name="Seconds">2</param>
                                                 </action>
@@ -156,6 +165,15 @@
                                                 </condition>
                                             </conditions>
                                             <actions>
+                                                <action id="0" name="Set text" sid="307020927467020" type="GameOver">
+                                                    <param id="0" name="Text">&quot;Você perdeu&quot;</param>
+                                                </action>
+                                                <action id="-15" name="Set visible" sid="565412557700117" type="Perdeu">
+                                                    <param id="0" name="Visibility">1</param>
+                                                </action>
+                                                <action id="-15" name="Set visible" sid="245628324618014" type="GameOver">
+                                                    <param id="0" name="Visibility">1</param>
+                                                </action>
                                                 <action id="-16" name="Wait" sid="440785910534959" type="System">
                                                     <param id="0" name="Seconds">2</param>
                                                 </action>
@@ -166,12 +184,53 @@
                                             <conditions>
                                                 <condition id="-22" name="Else" sid="698289433100619" type="System" />
                                             </conditions>
-                                            <actions>
-                                                <action id="-16" name="Wait" sid="146975664685925" type="System">
-                                                    <param id="0" name="Seconds">2</param>
-                                                </action>
-                                                <action id="-26" name="Restart layout" sid="866294405642060" type="System" />
-                                            </actions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="621666731556185">
+                                                    <conditions>
+                                                        <condition id="-14" name="Compare variable" sid="157378190875563" type="System">
+                                                            <param id="0" name="Variable">PLAYER</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">1</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Set text" sid="606057484829268" type="GameOver">
+                                                            <param id="0" name="Text">&quot;Você perdeu&quot;</param>
+                                                        </action>
+                                                        <action id="-15" name="Set visible" sid="192205362505032" type="Perdeu">
+                                                            <param id="0" name="Visibility">1</param>
+                                                        </action>
+                                                        <action id="-15" name="Set visible" sid="786072445049490" type="GameOver">
+                                                            <param id="0" name="Visibility">1</param>
+                                                        </action>
+                                                        <action id="-16" name="Wait" sid="146975664685925" type="System">
+                                                            <param id="0" name="Seconds">2</param>
+                                                        </action>
+                                                        <action id="-26" name="Restart layout" sid="866294405642060" type="System" />
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="198084962778250">
+                                                    <conditions>
+                                                        <condition id="-22" name="Else" sid="242150504726439" type="System" />
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Set text" sid="968377382662756" type="GameOver">
+                                                            <param id="0" name="Text">&quot;Você ganhou&quot;</param>
+                                                        </action>
+                                                        <action id="-15" name="Set visible" sid="870186977242948" type="Ganhou">
+                                                            <param id="0" name="Visibility">1</param>
+                                                        </action>
+                                                        <action id="-15" name="Set visible" sid="566174210874856" type="GameOver">
+                                                            <param id="0" name="Visibility">1</param>
+                                                        </action>
+                                                        <action id="-16" name="Wait" sid="158848579903798" type="System">
+                                                            <param id="0" name="Seconds">2</param>
+                                                        </action>
+                                                        <action id="-26" name="Restart layout" sid="363005957548342" type="System" />
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
                                         </event-block>
                                     </sub-events>
                                 </event-block>
@@ -599,9 +658,13 @@
                     </conditions>
                     <actions>
                         <action behavior="Physics" id="2" name="Apply force at angle" sid="534225121503467" type="BolaBranca">
-                            <param id="0" name="Force">Taco.AnimationFrame^5+FORCA</param>
+                            <param id="0" name="Force">(Taco.AnimationFrame^5)+(FORCA*1000)</param>
                             <param id="1" name="Angle">Taco.Angle-180</param>
                             <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="328733330499465" type="System">
+                            <param id="0" name="Variable">FORCA</param>
+                            <param id="1" name="Value">1</param>
                         </action>
                         <action id="-15" name="Set visible" sid="571823014380951" type="Taco">
                             <param id="0" name="Visibility">0</param>
@@ -609,10 +672,6 @@
                         <action id="2" name="Stop" sid="728129823973630" type="Taco" />
                         <action id="5" name="Set frame" sid="374648093297002" type="Taco">
                             <param id="0" name="Frame number">0</param>
-                        </action>
-                        <action id="-9" name="Set value" sid="328733330499465" type="System">
-                            <param id="0" name="Variable">FORCA</param>
-                            <param id="1" name="Value">1000</param>
                         </action>
                     </actions>
                 </event-block>
@@ -644,7 +703,7 @@
                             <actions>
                                 <action id="-9" name="Set value" sid="855444918926400" type="System">
                                     <param id="0" name="Variable">FORCA</param>
-                                    <param id="1" name="Value">200000</param>
+                                    <param id="1" name="Value">200</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -730,7 +789,7 @@
                                     <param id="0" name="Seconds">random(8)</param>
                                 </action>
                                 <action behavior="Physics" id="2" name="Apply force at angle" sid="543949329940868" type="BolaBranca">
-                                    <param id="0" name="Force">Taco.AnimationFrame^5+FORCA</param>
+                                    <param id="0" name="Force">(Taco.AnimationFrame^5)+1000*FORCA</param>
                                     <param id="1" name="Angle">Taco.Angle</param>
                                     <param id="2" name="Image point">0</param>
                                 </action>

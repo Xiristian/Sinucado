@@ -762,14 +762,22 @@
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="368547401483423" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5">
                         <collision-poly>
-                            <point x="0.22" y="0.22" />
-                            <point x="0.5" y="0.1" />
-                            <point x="0.77" y="0.23" />
-                            <point x="0.87" y="0.5" />
-                            <point x="0.75" y="0.75" />
-                            <point x="0.5" y="0.86" />
-                            <point x="0.24" y="0.76" />
-                            <point x="0.11" y="0.5" />
+                            <point x="0.229167" y="0.229167" />
+                            <point x="0.347656" y="0.154948" />
+                            <point x="0.5" y="0.125" />
+                            <point x="0.661458" y="0.153646" />
+                            <point x="0.770833" y="0.229167" />
+                            <point x="0.867188" y="0.329427" />
+                            <point x="0.916667" y="0.5" />
+                            <point x="0.88151" y="0.653646" />
+                            <point x="0.791667" y="0.791667" />
+                            <point x="0.671875" y="0.864583" />
+                            <point x="0.5" y="0.895833" />
+                            <point x="0.34375" y="0.868489" />
+                            <point x="0.234375" y="0.770833" />
+                            <point x="0.153646" y="0.653646" />
+                            <point x="0.125" y="0.5" />
+                            <point x="0.154948" y="0.348958" />
                         </collision-poly>
                     </frame>
                 </animation>
@@ -946,6 +954,39 @@
                     </frame>
                 </animation>
             </animation-folder>
+        </object-type>
+        <object-type name="Ganhou" sid="194917545832476">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="879614554071831" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\User\AppData\Local\Temp\Rar$DRa16000.2526\2.png">
+                        <collision-poly>
+                            <point x="0.5" y="0.0222223" />
+                            <point x="0.996599" y="0.5" />
+                            <point x="0.5" y="0.977778" />
+                            <point x="0.00340141" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Perdeu" sid="381012301562534">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="920809461010463" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\User\AppData\Local\Temp\Rar$DRa16000.3191\3.png">
+                        <collision-poly>
+                            <point x="0.5" y="0.0222223" />
+                            <point x="0.996599" y="0.5" />
+                            <point x="0.5" y="0.977778" />
+                            <point x="0.00340141" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="GameOver" sid="641042696449039">
+            <plugin id="Text" />
         </object-type>
     </object-folder>
     <families>

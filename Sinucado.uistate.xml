@@ -79,5 +79,7 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="animation-folder/Triangulo/" />
         <folder expanded="1" path="animation-folder/CorBolaPlayer/" />
         <folder expanded="1" path="animation-folder/CorBolaNPC/" />
+        <folder expanded="1" path="animation-folder/Ganhou/" />
+        <folder expanded="1" path="animation-folder/Perdeu/" />
     </folders-expanded>
 </c2uistate>
