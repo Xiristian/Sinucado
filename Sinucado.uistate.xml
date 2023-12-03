@@ -10,8 +10,8 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <display name="HTML5" />
     </configurations>
     <open-tabs>
-        <layout order="0">Game</layout>
-        <event-sheet active="1" order="1">Game Event</event-sheet>
+        <layout active="1" order="0">Game</layout>
+        <event-sheet order="1">Game Event</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />
@@ -20,19 +20,36 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <property expanded="1" name="Configuration Settings" />
     </properties>
     <families-expanded root="1">
-        <family expanded="0" name="FamiliaBolas" />
-        <family expanded="1" name="FamiliaCaçapas" />
+        <family expanded="1" name="FamiliaBolas" />
+        <family expanded="0" name="FamiliaCaçapas" />
+        <family expanded="0" name="FamiliaPontoInicialBolas" />
     </families-expanded>
     <folders-expanded>
         <folder expanded="1" path="object-folder/" />
-        <folder expanded="1" path="object-folder/Caçapas/" />
-        <folder expanded="0" path="object-folder/Bolas/" />
+        <folder expanded="0" path="object-folder/PontosIniciaisBolas/" />
+        <folder expanded="0" path="object-folder/Caçapas/" />
+        <folder expanded="1" path="object-folder/Bolas/" />
         <folder expanded="1" path="layout-folder/" />
         <folder expanded="1" path="event-folder/" />
-        <folder expanded="1" path="file-folder/" />
+        <folder expanded="0" path="file-folder/" />
         <folder expanded="1" path="sound-folder/" />
         <folder expanded="1" path="music-folder/" />
         <folder expanded="0" path="file-folder/Icons/" />
+        <folder expanded="1" path="animation-folder/PontoInicialBolas/" />
+        <folder expanded="1" path="animation-folder/PontoInicialBolas2/" />
+        <folder expanded="1" path="animation-folder/PontoInicialBolas3/" />
+        <folder expanded="1" path="animation-folder/PontoInicialBolas4/" />
+        <folder expanded="1" path="animation-folder/PontoInicialBolas5/" />
+        <folder expanded="1" path="animation-folder/PontoInicialBolas6/" />
+        <folder expanded="1" path="animation-folder/PontoInicialBolas7/" />
+        <folder expanded="1" path="animation-folder/PontoInicialBolas8/" />
+        <folder expanded="1" path="animation-folder/PontoInicialBolas9/" />
+        <folder expanded="1" path="animation-folder/PontoInicialBolas10/" />
+        <folder expanded="1" path="animation-folder/PontoInicialBolas11/" />
+        <folder expanded="1" path="animation-folder/PontoInicialBolas12/" />
+        <folder expanded="1" path="animation-folder/PontoInicialBolas13/" />
+        <folder expanded="1" path="animation-folder/PontoInicialBolas14/" />
+        <folder expanded="1" path="animation-folder/PontoInicialBolas15/" />
         <folder expanded="1" path="animation-folder/Buraco/" />
         <folder expanded="1" path="animation-folder/Buraco2/" />
         <folder expanded="1" path="animation-folder/Buraco3/" />
@@ -59,5 +76,8 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="animation-folder/PontoInicial/" />
         <folder expanded="1" path="animation-folder/Mira/" />
         <folder expanded="1" path="animation-folder/Paredes/" />
+        <folder expanded="1" path="animation-folder/Triangulo/" />
+        <folder expanded="1" path="animation-folder/CorBolaPlayer/" />
+        <folder expanded="1" path="animation-folder/CorBolaNPC/" />
     </folders-expanded>
 </c2uistate>

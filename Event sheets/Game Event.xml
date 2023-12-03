@@ -3,12 +3,12 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Game Event</name>
     <events>
-        <variable constant="0" name="LISTRADA" sid="632545860881411" static="0" type="number">0</variable>
+        <variable comment="1 = PLAYER está com azuis, -1 = NPC está com azuis" constant="0" name="AZUIS" sid="632545860881411" static="0" type="number">0</variable>
         <variable constant="0" name="BOLABRANCACAIU" sid="738126004369813" static="0" type="number">0</variable>
-        <variable constant="0" name="TODASASBOLASPARADAS" sid="710649440294735" static="0" type="number">1</variable>
-        <variable constant="0" name="PONTOSNPC" sid="490718365518576" static="0" type="number">0</variable>
-        <variable constant="0" name="PONTOSPLAYER" sid="763762097885842" static="0" type="number">0</variable>
-        <variable comment="1 = PLAYER, -1 = NPC" constant="0" name="PLAYER" sid="846687661259617" static="0" type="number">-1</variable>
+        <variable comment="Para identificar se o player/NPC pode começar a rodada" constant="0" name="TODASASBOLASPARADAS" sid="710649440294735" static="0" type="number">1</variable>
+        <variable comment="Bolas feitas pelo NPC no total" constant="0" name="PONTOSNPC" sid="490718365518576" static="0" type="number">0</variable>
+        <variable comment="Bolas feitas pelo PLAYER no total" constant="0" name="PONTOSPLAYER" sid="763762097885842" static="0" type="number">0</variable>
+        <variable comment="1 = PLAYER, -1 = NPC" constant="0" name="PLAYER" sid="846687661259617" static="0" type="number">0</variable>
         <variable comment="Bolas feitas na jogadas atual" constant="0" name="PONTOS" sid="436993471190008" static="0" type="number">0</variable>
         <variable constant="0" name="FORCA" sid="281845463635146" static="0" type="number">1000</variable>
         <event-group description="" sid="414789959729947" title="Game">
@@ -30,7 +30,55 @@
                         <action id="7" name="Set mirrored" sid="569661501378183" type="Taco">
                             <param id="0" name="State">0</param>
                         </action>
+                        <action id="-3" name="Set position" sid="591724065788460" type="BolaBranca">
+                            <param id="0" name="X">PontoInicial.X</param>
+                            <param id="1" name="Y">PontoInicial.Y</param>
+                        </action>
                     </actions>
+                    <sub-events>
+                        <event-block sid="246276544667118">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="201215335642432" type="System">
+                                    <param id="0" name="Object">FamiliaBolas</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <comment>As bolas começarão em um local diferente a cada partida</comment>
+                                <event-block sid="202433551453175">
+                                    <conditions>
+                                        <condition id="-24" name="For Each (ordered)" sid="362752950329738" type="System">
+                                            <param id="0" name="Object">FamiliaPontoInicialBolas</param>
+                                            <param id="1" name="Expression">random(15)</param>
+                                            <param id="2" name="Order">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-3" name="Set position" sid="816136096222642" type="FamiliaBolas">
+                                            <param id="0" name="X">FamiliaPontoInicialBolas.X</param>
+                                            <param id="1" name="Y">FamiliaPontoInicialBolas.Y</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <comment>O PLAYER que for setado aqui NÃO é o que começa</comment>
+                        <event-block sid="988121889610900">
+                            <conditions />
+                            <actions>
+                                <action id="-16" name="Wait" sid="515255496194545" type="System">
+                                    <param id="0" name="Seconds">1.0</param>
+                                </action>
+                                <action behavior="Physics" id="27" name="Set enabled" sid="982484608789715" type="Triangulo">
+                                    <param id="0" name="Mode">0</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="235422602594854" type="System">
+                                    <param id="0" name="Variable">PLAYER</param>
+                                    <param id="1" name="Value">-1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
                 <event-block sid="854206898542910">
                     <conditions>
@@ -43,10 +91,7 @@
                         <action id="0" name="Set text" sid="704580348613692" type="PontosPlayer">
                             <param id="0" name="Text">PONTOSPLAYER</param>
                         </action>
-                        <action id="0" name="Set text" sid="177002704056331" type="Pontos2">
-                            <param id="0" name="Text">PONTOS</param>
-                        </action>
-                        <action id="0" name="Set text" sid="862118655755072" type="Pontos">
+                        <action id="0" name="Set text" sid="862118655755072" type="BolasParadas">
                             <param id="0" name="Text">TODASASBOLASPARADAS</param>
                         </action>
                     </actions>
@@ -67,8 +112,15 @@
                             </conditions>
                             <actions>
                                 <action id="-9" name="Destroy" sid="210643147786885" type="FamiliaBolas" />
+                                <action id="-15" name="Set visible" sid="636606486706459" type="CorBolaPlayer">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="672633250928413" type="CorBolaNPC">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
                             </actions>
                             <sub-events>
+                                <comment>Fim da partida</comment>
                                 <event-block sid="736871676951674">
                                     <conditions>
                                         <condition id="-7" name="Compare instance variable" sid="270425042914115" type="FamiliaBolas">
@@ -130,19 +182,50 @@
                                             <param id="1" name="Comparison">0</param>
                                             <param id="2" name="Second value">0</param>
                                         </condition>
-                                        <condition id="-7" name="Compare instance variable" sid="761465668876014" type="FamiliaBolas">
-                                            <param id="0" name="Instance variable">NUMERO</param>
-                                            <param id="1" name="Comparison">4</param>
-                                            <param id="2" name="Value">8</param>
-                                        </condition>
                                     </conditions>
-                                    <actions>
-                                        <action id="-9" name="Set value" sid="680221541339946" type="System">
-                                            <param id="0" name="Variable">LISTRADA</param>
-                                            <param id="1" name="Value">PLAYER</param>
-                                        </action>
-                                    </actions>
+                                    <actions />
+                                    <sub-events>
+                                        <comment>Defnição de quem fica com as boals azuis</comment>
+                                        <event-block sid="221157419739583">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="761465668876014" type="FamiliaBolas">
+                                                    <param id="0" name="Instance variable">NUMERO</param>
+                                                    <param id="1" name="Comparison">4</param>
+                                                    <param id="2" name="Value">8</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="680221541339946" type="System">
+                                                    <param id="0" name="Variable">AZUIS</param>
+                                                    <param id="1" name="Value">PLAYER</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="948902957320967">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="432234053100745" type="System" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="645157510813032" type="System">
+                                                    <param id="0" name="Variable">AZUIS</param>
+                                                    <param id="1" name="Value">-PLAYER</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="593844627268319">
+                                            <conditions />
+                                            <actions>
+                                                <action id="5" name="Set frame" sid="508147568583649" type="CorBolaPlayer">
+                                                    <param id="0" name="Frame number">AZUIS</param>
+                                                </action>
+                                                <action id="5" name="Set frame" sid="273871685791252" type="CorBolaNPC">
+                                                    <param id="0" name="Frame number">-AZUIS</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
                                 </event-block>
+                                <comment>Cálculo para definir quem vai ganhar os pontos</comment>
                                 <event-block sid="550011931047977">
                                     <conditions>
                                         <condition id="-7" name="Compare instance variable" sid="383380876619508" type="FamiliaBolas">
@@ -158,7 +241,7 @@
                                                 <condition id="-14" name="Compare variable" sid="434381370061830" type="System">
                                                     <param id="0" name="Variable">PLAYER</param>
                                                     <param id="1" name="Comparison">0</param>
-                                                    <param id="2" name="Value">LISTRADA</param>
+                                                    <param id="2" name="Value">AZUIS</param>
                                                 </condition>
                                             </conditions>
                                             <actions>
@@ -248,7 +331,7 @@
                                                 <condition id="-14" name="Compare variable" sid="212647358466166" type="System">
                                                     <param id="0" name="Variable">PLAYER</param>
                                                     <param id="1" name="Comparison">0</param>
-                                                    <param id="2" name="Value">LISTRADA</param>
+                                                    <param id="2" name="Value">AZUIS</param>
                                                 </condition>
                                             </conditions>
                                             <actions>
@@ -332,6 +415,7 @@
                         <event-block sid="647418712984823">
                             <conditions>
                                 <condition behavior="Physics" id="0" name="Is sleeping" sid="758222063800656" type="FamiliaBolas" />
+                                <condition behavior="Physics" id="0" name="Is sleeping" sid="488703707700965" type="BolaBranca" />
                             </conditions>
                             <actions>
                                 <action id="-9" name="Set value" sid="990849915225369" type="System">
@@ -382,6 +466,7 @@
                     </conditions>
                     <actions />
                     <sub-events>
+                        <comment>Troca de rodada entre PLAYER e NPC</comment>
                         <event-block sid="939546062285412">
                             <conditions>
                                 <condition id="-14" name="Compare variable" sid="472699314054294" type="System">
@@ -396,7 +481,7 @@
                                     <param id="0" name="Visibility">1</param>
                                 </action>
                                 <action id="9" name="Set scale" sid="439888709039679" type="FamiliaCaçapas">
-                                    <param id="0" name="Scale">0</param>
+                                    <param id="0" name="Scale">1</param>
                                 </action>
                             </actions>
                             <sub-events>
@@ -473,32 +558,23 @@
                                 </event-block>
                             </sub-events>
                         </event-block>
-                        <event-block sid="792973317959254">
-                            <conditions>
-                                <condition id="-8" name="Compare two values" sid="579081658227411" type="System">
-                                    <param id="0" name="First value">FamiliaBolas.Count</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Second value">0</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-16" name="Wait" sid="285319251867745" type="System">
-                                    <param id="0" name="Seconds">2</param>
-                                </action>
-                                <action id="-26" name="Restart layout" sid="997570353528731" type="System" />
-                            </actions>
-                        </event-block>
                     </sub-events>
                 </event-block>
+                <comment>Rodada do PLAYER</comment>
                 <event-block sid="484371017517913">
                     <conditions>
                         <condition id="0" name="On click" sid="890800673303918" type="Mouse">
                             <param id="0" name="Mouse button">0</param>
                             <param id="1" name="Click type">0</param>
                         </condition>
-                        <condition id="-9" name="Is visible" sid="255171401538818" type="Taco" />
                         <condition id="-14" name="Compare variable" sid="733148409023670" type="System">
                             <param id="0" name="Variable">PLAYER</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                        <condition id="-9" name="Is visible" sid="255171401538818" type="Taco" />
+                        <condition id="-14" name="Compare variable" sid="435563209855373" type="System">
+                            <param id="0" name="Variable">TODASASBOLASPARADAS</param>
                             <param id="1" name="Comparison">0</param>
                             <param id="2" name="Value">1</param>
                         </condition>
@@ -542,10 +618,13 @@
                 </event-block>
                 <event-block sid="365560416602948">
                     <conditions>
-                        <condition behavior="Physics" id="0" name="Is sleeping" sid="555976859407951" type="BolaBranca" />
-                        <condition behavior="Physics" id="0" name="Is sleeping" sid="867781268226638" type="FamiliaBolas" />
                         <condition id="-14" name="Compare variable" sid="471526550654555" type="System">
                             <param id="0" name="Variable">PLAYER</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="501606192477673" type="System">
+                            <param id="0" name="Variable">TODASASBOLASPARADAS</param>
                             <param id="1" name="Comparison">0</param>
                             <param id="2" name="Value">1</param>
                         </condition>
@@ -556,15 +635,74 @@
                             <param id="1" name="Y">Mouse.Y</param>
                         </action>
                     </actions>
+                    <sub-events>
+                        <comment>Poderes do PLAYER</comment>
+                        <event-block sid="223520540143881">
+                            <conditions>
+                                <condition id="0" name="On clicked" sid="204513358664995" type="Força" />
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="855444918926400" type="System">
+                                    <param id="0" name="Variable">FORCA</param>
+                                    <param id="1" name="Value">200000</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="846637299968882">
+                            <conditions>
+                                <condition id="0" name="On clicked" sid="770870652983856" type="Caçapa" />
+                            </conditions>
+                            <actions>
+                                <action id="9" name="Set scale" sid="469141531030608" type="FamiliaCaçapas">
+                                    <param id="0" name="Scale">1.2</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Mira</comment>
+                        <event-block sid="468462043787131">
+                            <conditions>
+                                <condition id="2" name="Mouse button is down" sid="907972165427217" type="Mouse">
+                                    <param id="0" name="Mouse button">0</param>
+                                </condition>
+                                <condition id="-9" name="Is visible" sid="746566828830809" type="Taco" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="421132640094856" type="Taco">
+                                    <param id="0" name="Object">Mira</param>
+                                    <param id="1" name="Layer">0</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="-19" name="Rotate counter-clockwise" sid="854374167819138" type="Mira">
+                                    <param id="0" name="Degrees">180</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
+                <event-block sid="307852776282487">
+                    <conditions>
+                        <condition behavior="Bullet" id="1" name="Compare distance travelled" sid="762939925226592" type="Mira">
+                            <param id="0" name="Comparison">4</param>
+                            <param id="1" name="Distance">800</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="242932127185194" type="Mira" />
+                    </actions>
+                </event-block>
+                <comment>Rodada do NPC</comment>
                 <event-block sid="890624346365205">
                     <conditions>
-                        <condition behavior="Physics" id="0" name="Is sleeping" sid="179008285664182" type="BolaBranca" />
-                        <condition behavior="Physics" id="0" name="Is sleeping" sid="283611355302173" type="FamiliaBolas" />
+                        <condition id="-9" name="Is visible" sid="584627279428984" type="Taco" />
                         <condition id="-14" name="Compare variable" sid="946962748663262" type="System">
                             <param id="0" name="Variable">PLAYER</param>
                             <param id="1" name="Comparison">0</param>
                             <param id="2" name="Value">-1</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="377835242831260" type="System">
+                            <param id="0" name="Variable">TODASASBOLASPARADAS</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -606,78 +744,6 @@
                             </actions>
                         </event-block>
                     </sub-events>
-                </event-block>
-                <event-block sid="833987914817157">
-                    <conditions>
-                        <condition id="-14" name="Compare variable" sid="923514379789781" type="System">
-                            <param id="0" name="Variable">PLAYER</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">1</param>
-                        </condition>
-                    </conditions>
-                    <actions />
-                    <sub-events>
-                        <event-block sid="468462043787131">
-                            <conditions>
-                                <condition id="2" name="Mouse button is down" sid="907972165427217" type="Mouse">
-                                    <param id="0" name="Mouse button">0</param>
-                                </condition>
-                                <condition id="-9" name="Is visible" sid="746566828830809" type="Taco" />
-                            </conditions>
-                            <actions>
-                                <action id="0" name="Spawn another object" sid="421132640094856" type="Taco">
-                                    <param id="0" name="Object">Mira</param>
-                                    <param id="1" name="Layer">0</param>
-                                    <param id="2" name="Image point">0</param>
-                                </action>
-                                <action id="-19" name="Rotate counter-clockwise" sid="854374167819138" type="Mira">
-                                    <param id="0" name="Degrees">180</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="307852776282487">
-                            <conditions>
-                                <condition behavior="Bullet" id="1" name="Compare distance travelled" sid="762939925226592" type="Mira">
-                                    <param id="0" name="Comparison">4</param>
-                                    <param id="1" name="Distance">800</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-9" name="Destroy" sid="242932127185194" type="Mira" />
-                            </actions>
-                        </event-block>
-                    </sub-events>
-                </event-block>
-                <event-block sid="426196747731155">
-                    <conditions>
-                        <condition id="0" name="On clicked" sid="204513358664995" type="Força" />
-                        <condition id="-14" name="Compare variable" sid="865518786902400" type="System">
-                            <param id="0" name="Variable">PLAYER</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">1</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-9" name="Set value" sid="855444918926400" type="System">
-                            <param id="0" name="Variable">FORCA</param>
-                            <param id="1" name="Value">200000</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="189713143562810">
-                    <conditions>
-                        <condition id="0" name="On clicked" sid="770870652983856" type="Caçapa" />
-                        <condition id="-14" name="Compare variable" sid="428921736817318" type="System">
-                            <param id="0" name="Variable">PLAYER</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">1</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="9" name="Set scale" sid="469141531030608" type="FamiliaCaçapas">
-                            <param id="0" name="Scale">1.2</param>
-                        </action>
-                    </actions>
                 </event-block>
             </sub-events>
         </event-group>
