@@ -18,6 +18,7 @@
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
     </used-plugins>
     <used-behaviors>
+        <behavior author="Scirra" id="Anchor" version="1">Anchor</behavior>
         <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
         <behavior author="Scirra" id="Physics" version="1">Physics</behavior>
         <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
@@ -957,6 +958,11 @@
         </object-type>
         <object-type name="Ganhou" sid="194917545832476">
             <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Anchor" sid="115728182482396">
+                    <behavior id="Anchor" />
+                </behavior-type>
+            </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="879614554071831" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\User\AppData\Local\Temp\Rar$DRa16000.2526\2.png">
@@ -972,6 +978,11 @@
         </object-type>
         <object-type name="Perdeu" sid="381012301562534">
             <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Anchor" sid="308806271398035">
+                    <behavior id="Anchor" />
+                </behavior-type>
+            </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="920809461010463" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\User\AppData\Local\Temp\Rar$DRa16000.3191\3.png">
@@ -987,6 +998,14 @@
         </object-type>
         <object-type name="GameOver" sid="641042696449039">
             <plugin id="Text" />
+            <behaviors>
+                <behavior-type name="Anchor" sid="681676022149107">
+                    <behavior id="Anchor" />
+                </behavior-type>
+            </behaviors>
+        </object-type>
+        <object-type name="DesaparecerBolasInimigo" sid="196450330528276">
+            <plugin id="Button" />
         </object-type>
     </object-folder>
     <families>

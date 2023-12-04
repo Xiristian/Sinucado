@@ -610,7 +610,7 @@
                                 <elasticity>0.5</elasticity>
                                 <linear-damping>1</linear-damping>
                                 <angular-damping>0</angular-damping>
-                                <bullet>No</bullet>
+                                <bullet>Yes</bullet>
                                 <initial-state>Enabled</initial-state>
                             </properties>
                         </behavior-instance>
@@ -811,7 +811,7 @@
                             <properties>
                                 <immovable>No</immovable>
                                 <collision-mask>Circle</collision-mask>
-                                <prevent-rotation>Yes</prevent-rotation>
+                                <prevent-rotation>No</prevent-rotation>
                                 <density>4</density>
                                 <friction>0</friction>
                                 <elasticity>0.5</elasticity>
@@ -857,7 +857,7 @@
                             <properties>
                                 <immovable>No</immovable>
                                 <collision-mask>Circle</collision-mask>
-                                <prevent-rotation>Yes</prevent-rotation>
+                                <prevent-rotation>No</prevent-rotation>
                                 <density>4</density>
                                 <friction>0</friction>
                                 <elasticity>0.5</elasticity>
@@ -903,7 +903,7 @@
                             <properties>
                                 <immovable>No</immovable>
                                 <collision-mask>Circle</collision-mask>
-                                <prevent-rotation>Yes</prevent-rotation>
+                                <prevent-rotation>No</prevent-rotation>
                                 <density>4</density>
                                 <friction>0</friction>
                                 <elasticity>0.5</elasticity>
@@ -949,7 +949,7 @@
                             <properties>
                                 <immovable>No</immovable>
                                 <collision-mask>Circle</collision-mask>
-                                <prevent-rotation>Yes</prevent-rotation>
+                                <prevent-rotation>No</prevent-rotation>
                                 <density>4</density>
                                 <friction>0</friction>
                                 <elasticity>0.5</elasticity>
@@ -995,7 +995,7 @@
                             <properties>
                                 <immovable>No</immovable>
                                 <collision-mask>Circle</collision-mask>
-                                <prevent-rotation>Yes</prevent-rotation>
+                                <prevent-rotation>No</prevent-rotation>
                                 <density>4</density>
                                 <friction>0</friction>
                                 <elasticity>0.5</elasticity>
@@ -1041,7 +1041,7 @@
                             <properties>
                                 <immovable>No</immovable>
                                 <collision-mask>Circle</collision-mask>
-                                <prevent-rotation>Yes</prevent-rotation>
+                                <prevent-rotation>No</prevent-rotation>
                                 <density>4</density>
                                 <friction>0</friction>
                                 <elasticity>0.5</elasticity>
@@ -1087,7 +1087,7 @@
                             <properties>
                                 <immovable>No</immovable>
                                 <collision-mask>Circle</collision-mask>
-                                <prevent-rotation>Yes</prevent-rotation>
+                                <prevent-rotation>No</prevent-rotation>
                                 <density>4</density>
                                 <friction>0</friction>
                                 <elasticity>0.5</elasticity>
@@ -1133,7 +1133,7 @@
                             <properties>
                                 <immovable>No</immovable>
                                 <collision-mask>Circle</collision-mask>
-                                <prevent-rotation>Yes</prevent-rotation>
+                                <prevent-rotation>No</prevent-rotation>
                                 <density>4</density>
                                 <friction>0</friction>
                                 <elasticity>0.5</elasticity>
@@ -1179,7 +1179,7 @@
                             <properties>
                                 <immovable>No</immovable>
                                 <collision-mask>Circle</collision-mask>
-                                <prevent-rotation>Yes</prevent-rotation>
+                                <prevent-rotation>No</prevent-rotation>
                                 <density>4</density>
                                 <friction>0</friction>
                                 <elasticity>0.5</elasticity>
@@ -1225,7 +1225,7 @@
                             <properties>
                                 <immovable>No</immovable>
                                 <collision-mask>Circle</collision-mask>
-                                <prevent-rotation>Yes</prevent-rotation>
+                                <prevent-rotation>No</prevent-rotation>
                                 <density>4</density>
                                 <friction>0</friction>
                                 <elasticity>0.5</elasticity>
@@ -1271,7 +1271,7 @@
                             <properties>
                                 <immovable>No</immovable>
                                 <collision-mask>Circle</collision-mask>
-                                <prevent-rotation>Yes</prevent-rotation>
+                                <prevent-rotation>No</prevent-rotation>
                                 <density>4</density>
                                 <friction>0</friction>
                                 <elasticity>0.5</elasticity>
@@ -1317,7 +1317,7 @@
                             <properties>
                                 <immovable>No</immovable>
                                 <collision-mask>Circle</collision-mask>
-                                <prevent-rotation>Yes</prevent-rotation>
+                                <prevent-rotation>No</prevent-rotation>
                                 <density>4</density>
                                 <friction>0</friction>
                                 <elasticity>0.5</elasticity>
@@ -1363,7 +1363,7 @@
                             <properties>
                                 <immovable>No</immovable>
                                 <collision-mask>Circle</collision-mask>
-                                <prevent-rotation>Yes</prevent-rotation>
+                                <prevent-rotation>No</prevent-rotation>
                                 <density>4</density>
                                 <friction>0</friction>
                                 <elasticity>0.5</elasticity>
@@ -1409,7 +1409,7 @@
                             <properties>
                                 <immovable>No</immovable>
                                 <collision-mask>Circle</collision-mask>
-                                <prevent-rotation>Yes</prevent-rotation>
+                                <prevent-rotation>No</prevent-rotation>
                                 <density>4</density>
                                 <friction>0</friction>
                                 <elasticity>0.5</elasticity>
@@ -1455,7 +1455,7 @@
                             <properties>
                                 <immovable>No</immovable>
                                 <collision-mask>Circle</collision-mask>
-                                <prevent-rotation>Yes</prevent-rotation>
+                                <prevent-rotation>No</prevent-rotation>
                                 <density>4</density>
                                 <friction>0</friction>
                                 <elasticity>0.5</elasticity>
@@ -1703,6 +1703,17 @@
                         <initial-frame>0</initial-frame>
                         <collisions>Enabled</collisions>
                     </properties>
+                    <behavior-instances>
+                        <behavior-instance type="Anchor">
+                            <properties>
+                                <left-edge>Window left</left-edge>
+                                <top-edge>Window top</top-edge>
+                                <right-edge>None</right-edge>
+                                <bottom-edge>None</bottom-edge>
+                                <initial-state>Enabled</initial-state>
+                            </properties>
+                        </behavior-instance>
+                    </behavior-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
@@ -1725,6 +1736,17 @@
                         <initial-frame>0</initial-frame>
                         <collisions>Enabled</collisions>
                     </properties>
+                    <behavior-instances>
+                        <behavior-instance type="Anchor">
+                            <properties>
+                                <left-edge>Window left</left-edge>
+                                <top-edge>Window top</top-edge>
+                                <right-edge>None</right-edge>
+                                <bottom-edge>None</bottom-edge>
+                                <initial-state>Enabled</initial-state>
+                            </properties>
+                        </behavior-instance>
+                    </behavior-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
@@ -1752,6 +1774,17 @@
                         <wrapping>Word</wrapping>
                         <line-height>0</line-height>
                     </properties>
+                    <behavior-instances>
+                        <behavior-instance type="Anchor">
+                            <properties>
+                                <left-edge>Window left</left-edge>
+                                <top-edge>Window top</top-edge>
+                                <right-edge>None</right-edge>
+                                <bottom-edge>None</bottom-edge>
+                                <initial-state>Enabled</initial-state>
+                            </properties>
+                        </behavior-instance>
+                    </behavior-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
@@ -1765,6 +1798,30 @@
                         <hotspotY>0</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="DesaparecerBolasInimigo" uid="57">
+                    <properties>
+                        <type>Button</type>
+                        <text>Desapearecer bolas do adversário</text>
+                        <tooltip></tooltip>
+                        <initial-visibility>Visible</initial-visibility>
+                        <enabled>Yes</enabled>
+                        <auto-font-size>Yes</auto-font-size>
+                        <id-optional></id-optional>
+                        <checked>No</checked>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>942</x>
+                        <y>880</y>
+                        <z>0</z>
+                        <width>241</width>
+                        <height>24</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
                     </world>
                 </instance>
             </instances>

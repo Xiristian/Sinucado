@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Game Event</name>
     <events>
+        <variable comment="0 = Em jogo, 1 = Ganhou, 2 = Perdeu" constant="0" name="GANHOU" sid="857952422606831" static="0" type="number">0</variable>
         <variable comment="1 = PLAYER está com azuis, -1 = NPC está com azuis" constant="0" name="AZUIS" sid="632545860881411" static="0" type="number">0</variable>
         <variable constant="0" name="BOLABRANCACAIU" sid="738126004369813" static="0" type="number">0</variable>
         <variable comment="Para identificar se o player/NPC pode começar a rodada" constant="0" name="TODASASBOLASPARADAS" sid="710649440294735" static="0" type="number">1</variable>
@@ -140,19 +141,10 @@
                                                 </condition>
                                             </conditions>
                                             <actions>
-                                                <action id="0" name="Set text" sid="967229525972444" type="GameOver">
-                                                    <param id="0" name="Text">&quot;Você ganhou&quot;</param>
+                                                <action id="-9" name="Set value" sid="545457213466566" type="System">
+                                                    <param id="0" name="Variable">GANHOU</param>
+                                                    <param id="1" name="Value">1</param>
                                                 </action>
-                                                <action id="-15" name="Set visible" sid="869292938913036" type="Ganhou">
-                                                    <param id="0" name="Visibility">1</param>
-                                                </action>
-                                                <action id="-15" name="Set visible" sid="660344064109927" type="GameOver">
-                                                    <param id="0" name="Visibility">1</param>
-                                                </action>
-                                                <action id="-16" name="Wait" sid="755689210511656" type="System">
-                                                    <param id="0" name="Seconds">2</param>
-                                                </action>
-                                                <action id="-26" name="Restart layout" sid="823593500126867" type="System" />
                                             </actions>
                                         </event-block>
                                         <event-block sid="648127336490673">
@@ -165,19 +157,10 @@
                                                 </condition>
                                             </conditions>
                                             <actions>
-                                                <action id="0" name="Set text" sid="307020927467020" type="GameOver">
-                                                    <param id="0" name="Text">&quot;Você perdeu&quot;</param>
+                                                <action id="-9" name="Set value" sid="735296504554701" type="System">
+                                                    <param id="0" name="Variable">GANHOU</param>
+                                                    <param id="1" name="Value">2</param>
                                                 </action>
-                                                <action id="-15" name="Set visible" sid="565412557700117" type="Perdeu">
-                                                    <param id="0" name="Visibility">1</param>
-                                                </action>
-                                                <action id="-15" name="Set visible" sid="245628324618014" type="GameOver">
-                                                    <param id="0" name="Visibility">1</param>
-                                                </action>
-                                                <action id="-16" name="Wait" sid="440785910534959" type="System">
-                                                    <param id="0" name="Seconds">2</param>
-                                                </action>
-                                                <action id="-26" name="Restart layout" sid="627409000741968" type="System" />
                                             </actions>
                                         </event-block>
                                         <event-block sid="854277761923536">
@@ -195,19 +178,10 @@
                                                         </condition>
                                                     </conditions>
                                                     <actions>
-                                                        <action id="0" name="Set text" sid="606057484829268" type="GameOver">
-                                                            <param id="0" name="Text">&quot;Você perdeu&quot;</param>
+                                                        <action id="-9" name="Set value" sid="453991927239634" type="System">
+                                                            <param id="0" name="Variable">GANHOU</param>
+                                                            <param id="1" name="Value">2</param>
                                                         </action>
-                                                        <action id="-15" name="Set visible" sid="192205362505032" type="Perdeu">
-                                                            <param id="0" name="Visibility">1</param>
-                                                        </action>
-                                                        <action id="-15" name="Set visible" sid="786072445049490" type="GameOver">
-                                                            <param id="0" name="Visibility">1</param>
-                                                        </action>
-                                                        <action id="-16" name="Wait" sid="146975664685925" type="System">
-                                                            <param id="0" name="Seconds">2</param>
-                                                        </action>
-                                                        <action id="-26" name="Restart layout" sid="866294405642060" type="System" />
                                                     </actions>
                                                 </event-block>
                                                 <event-block sid="198084962778250">
@@ -215,19 +189,10 @@
                                                         <condition id="-22" name="Else" sid="242150504726439" type="System" />
                                                     </conditions>
                                                     <actions>
-                                                        <action id="0" name="Set text" sid="968377382662756" type="GameOver">
-                                                            <param id="0" name="Text">&quot;Você ganhou&quot;</param>
+                                                        <action id="-9" name="Set value" sid="688915265159015" type="System">
+                                                            <param id="0" name="Variable">GANHOU</param>
+                                                            <param id="1" name="Value">1</param>
                                                         </action>
-                                                        <action id="-15" name="Set visible" sid="870186977242948" type="Ganhou">
-                                                            <param id="0" name="Visibility">1</param>
-                                                        </action>
-                                                        <action id="-15" name="Set visible" sid="566174210874856" type="GameOver">
-                                                            <param id="0" name="Visibility">1</param>
-                                                        </action>
-                                                        <action id="-16" name="Wait" sid="158848579903798" type="System">
-                                                            <param id="0" name="Seconds">2</param>
-                                                        </action>
-                                                        <action id="-26" name="Restart layout" sid="363005957548342" type="System" />
                                                     </actions>
                                                 </event-block>
                                             </sub-events>
@@ -542,6 +507,16 @@
                                 <action id="9" name="Set scale" sid="439888709039679" type="FamiliaCaçapas">
                                     <param id="0" name="Scale">1</param>
                                 </action>
+                                <action id="-15" name="Set visible" sid="606693985410380" type="FamiliaBolas">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action behavior="Physics" id="23" name="Enable/disable collisions" sid="675734500720655" type="FamiliaBolas">
+                                    <param id="0" name="Object">BolaBranca</param>
+                                    <param id="1" name="State">1</param>
+                                </action>
+                                <action id="11" name="Set collisions enabled" sid="786496394849905" type="FamiliaBolas">
+                                    <param id="0" name="Collisions">1</param>
+                                </action>
                             </actions>
                             <sub-events>
                                 <event-block any="1" sid="276251607423699">
@@ -637,6 +612,11 @@
                             <param id="1" name="Comparison">0</param>
                             <param id="2" name="Value">1</param>
                         </condition>
+                        <condition id="-14" name="Compare variable" sid="931205685923661" type="System">
+                            <param id="0" name="Variable">GANHOU</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
                     </conditions>
                     <actions>
                         <action id="3" name="Start" sid="589551851727626" type="Taco">
@@ -654,6 +634,11 @@
                             <param id="0" name="Variable">PLAYER</param>
                             <param id="1" name="Comparison">0</param>
                             <param id="2" name="Value">1</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="553594846218091" type="System">
+                            <param id="0" name="Variable">GANHOU</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -682,6 +667,11 @@
                             <param id="1" name="Comparison">0</param>
                             <param id="2" name="Value">1</param>
                         </condition>
+                        <condition id="-14" name="Compare variable" sid="182044453414728" type="System">
+                            <param id="0" name="Variable">GANHOU</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
                         <condition id="-14" name="Compare variable" sid="501606192477673" type="System">
                             <param id="0" name="Variable">TODASASBOLASPARADAS</param>
                             <param id="1" name="Comparison">0</param>
@@ -695,7 +685,7 @@
                         </action>
                     </actions>
                     <sub-events>
-                        <comment>Poderes do PLAYER</comment>
+                        <comment>Aumentar a força</comment>
                         <event-block sid="223520540143881">
                             <conditions>
                                 <condition id="0" name="On clicked" sid="204513358664995" type="Força" />
@@ -707,6 +697,7 @@
                                 </action>
                             </actions>
                         </event-block>
+                        <comment>Aumentar o tamanho das caçapas</comment>
                         <event-block sid="846637299968882">
                             <conditions>
                                 <condition id="0" name="On clicked" sid="770870652983856" type="Caçapa" />
@@ -716,6 +707,101 @@
                                     <param id="0" name="Scale">1.2</param>
                                 </action>
                             </actions>
+                        </event-block>
+                        <comment>Desaparecer as bolas do adversário</comment>
+                        <event-block sid="325828765117591">
+                            <conditions>
+                                <condition id="0" name="On clicked" sid="675197396650571" type="DesaparecerBolasInimigo" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="608214172481125">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="848769447645269" type="System">
+                                            <param id="0" name="First value">PONTOSPLAYER + PONTOSNPC</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Second value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <comment>Desaparecer as bolas do adversário</comment>
+                                        <comment>Desaparecer as bolas do adversário</comment>
+                                        <event-block sid="292722757658329">
+                                            <conditions>
+                                                <condition id="-11" name="For Each" sid="505206166467028" type="System">
+                                                    <param id="0" name="Object">FamiliaBolas</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="125823054884205">
+                                                    <conditions>
+                                                        <condition id="-14" name="Compare variable" sid="690861941285496" type="System">
+                                                            <param id="0" name="Variable">AZUIS</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">1</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions />
+                                                    <sub-events>
+                                                        <event-block sid="838844371798863">
+                                                            <conditions>
+                                                                <condition id="-7" name="Compare instance variable" sid="326458139780288" type="FamiliaBolas">
+                                                                    <param id="0" name="Instance variable">NUMERO</param>
+                                                                    <param id="1" name="Comparison">2</param>
+                                                                    <param id="2" name="Value">8</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="-15" name="Set visible" sid="243810537364844" type="FamiliaBolas">
+                                                                    <param id="0" name="Visibility">0</param>
+                                                                </action>
+                                                                <action behavior="Physics" id="23" name="Enable/disable collisions" sid="350967520445462" type="FamiliaBolas">
+                                                                    <param id="0" name="Object">BolaBranca</param>
+                                                                    <param id="1" name="State">0</param>
+                                                                </action>
+                                                                <action id="11" name="Set collisions enabled" sid="548156283424485" type="FamiliaBolas">
+                                                                    <param id="0" name="Collisions">0</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
+                                                <event-block sid="327289815571580">
+                                                    <conditions>
+                                                        <condition id="-22" name="Else" sid="196268339170411" type="System" />
+                                                    </conditions>
+                                                    <actions />
+                                                    <sub-events>
+                                                        <event-block sid="369077608146710">
+                                                            <conditions>
+                                                                <condition id="-7" name="Compare instance variable" sid="561290858282372" type="FamiliaBolas">
+                                                                    <param id="0" name="Instance variable">NUMERO</param>
+                                                                    <param id="1" name="Comparison">4</param>
+                                                                    <param id="2" name="Value">8</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="-15" name="Set visible" sid="754499426477890" type="FamiliaBolas">
+                                                                    <param id="0" name="Visibility">0</param>
+                                                                </action>
+                                                                <action behavior="Physics" id="23" name="Enable/disable collisions" sid="931893580849016" type="FamiliaBolas">
+                                                                    <param id="0" name="Object">BolaBranca</param>
+                                                                    <param id="1" name="State">0</param>
+                                                                </action>
+                                                                <action id="11" name="Set collisions enabled" sid="274062438764374" type="FamiliaBolas">
+                                                                    <param id="0" name="Collisions">0</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                    </sub-events>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
                         </event-block>
                         <comment>Mira</comment>
                         <event-block sid="468462043787131">
@@ -753,6 +839,11 @@
                 <event-block sid="890624346365205">
                     <conditions>
                         <condition id="-9" name="Is visible" sid="584627279428984" type="Taco" />
+                        <condition id="-14" name="Compare variable" sid="619263935945525" type="System">
+                            <param id="0" name="Variable">GANHOU</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
                         <condition id="-14" name="Compare variable" sid="946962748663262" type="System">
                             <param id="0" name="Variable">PLAYER</param>
                             <param id="1" name="Comparison">0</param>
@@ -800,6 +891,69 @@
                                 <action id="5" name="Set frame" sid="809963664247863" type="Taco">
                                     <param id="0" name="Frame number">0</param>
                                 </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Fim da partida</comment>
+                <event-block sid="543587500787711">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="127521709762906" type="System">
+                            <param id="0" name="Variable">TODASASBOLASPARADAS</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="940959502055782" type="System">
+                            <param id="0" name="Variable">GANHOU</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="228392657794691" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="840711007982375">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="714545182001056" type="System">
+                                    <param id="0" name="Variable">GANHOU</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="187080095828193" type="GameOver">
+                                    <param id="0" name="Text">&quot;Você ganhou&quot;</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="406317167265242" type="Ganhou">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="717710817318479" type="GameOver">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="981943432422596" type="System">
+                                    <param id="0" name="Seconds">2</param>
+                                </action>
+                                <action id="-26" name="Restart layout" sid="489179036923385" type="System" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="449491192593121">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="171626405671214" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="882768182702550" type="GameOver">
+                                    <param id="0" name="Text">&quot;Você perdeu&quot;</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="715644658746338" type="Perdeu">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="278793969916743" type="GameOver">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="584654171452570" type="System">
+                                    <param id="0" name="Seconds">2</param>
+                                </action>
+                                <action id="-26" name="Restart layout" sid="223574374159057" type="System" />
                             </actions>
                         </event-block>
                     </sub-events>

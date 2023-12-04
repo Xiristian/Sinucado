@@ -20,7 +20,7 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <property expanded="1" name="Configuration Settings" />
     </properties>
     <families-expanded root="1">
-        <family expanded="1" name="FamiliaBolas" />
+        <family expanded="0" name="FamiliaBolas" />
         <family expanded="0" name="FamiliaCaçapas" />
         <family expanded="0" name="FamiliaPontoInicialBolas" />
     </families-expanded>
@@ -28,7 +28,7 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="object-folder/" />
         <folder expanded="0" path="object-folder/PontosIniciaisBolas/" />
         <folder expanded="0" path="object-folder/Caçapas/" />
-        <folder expanded="1" path="object-folder/Bolas/" />
+        <folder expanded="0" path="object-folder/Bolas/" />
         <folder expanded="1" path="layout-folder/" />
         <folder expanded="1" path="event-folder/" />
         <folder expanded="0" path="file-folder/" />
